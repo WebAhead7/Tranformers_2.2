@@ -8,9 +8,9 @@
   </head>
 
   <body>
-    <h1>The Transformers</h1>
+    <h1>Transformers_2.2</h1>
 
-    <form>
+    <form id="Go">
       <select name="searchBy" id="searchBy">
         <option selected disabled>Search by</option>
         <option class="search-by-option" value="Make">Manufacturer</option>
@@ -19,24 +19,26 @@
       </select>
 
       <input
-        list="models"
-        name="modelslist"
-        id="modelslist"
+        type="text"
+        list="autolist"
+        name="auto"
+        id="auto"
         placeholder="Search"
+        disabled="true"
+        ;
       />
-      <datalist id="models">
+      <datalist id="autolist">
         <option value="Mazda"></option>
         <option value="Ford"></option>
         <option value="GMC"></option>
         <option value="Ferrari"></option>
       </datalist>
-      <input type="submit" value="GO" />
+      <input type="submit" id="goBtn" value="GO" disabled="true" />
     </form>
 
     <p>
       <strong>Note:</strong> car details to be added when clicking Go button.
     </p>
-
-    <script src="public/index.js"></script>
   </body>
+  <script src="public/index.js"></script>
 </html>
