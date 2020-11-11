@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transformers_v6</title>
+    <link rel="stylesheet" href="public/index.css" />
+  </head>
+
+  <body>
+    <h1>The Transformers</h1>
+
+    <form>
+      <select name="searchBy" id="searchBy">
+        <option selected disabled>Search by</option>
+        <option class="search-by-option" value="Make">Manufacturer</option>
+        <option class="search-by-option" value="Origin">Country</option>
+        <option class="search-by-option" value="Model">Model</option>
+      </select>
+
+      <input
+        list="models"
+        name="modelslist"
+        id="modelslist"
+        placeholder="Search"
+      />
+      <datalist id="models">
+        <option value="Mazda"></option>
+        <option value="Ford"></option>
+        <option value="GMC"></option>
+        <option value="Ferrari"></option>
+      </datalist>
+      <input type="submit" value="GO" />
+    </form>
+
+    <p>
+      <strong>Note:</strong> car details to be added when clicking Go button.
+    </p>
+
+    <script src="public/index.js"></script>
+  </body>
+</html>
