@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  width: 80vw;
+  margin: auto;
+}
+
+.center {
+  width: 100%;
+  height: fit-content;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+.center-title {
+  margin: 20px 0px;
+}
+
+#Go {
+  width: 80%;
+  height: 10vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 2px solid;
+  border-radius: 5px;
+  background: whitesmoke;
+}
+
+#Go select,
+input {
+  height: 60%;
+  border-radius: 5px;
+}
+
+#searBy {
+  width: 30%;
+}
+
+#auto {
+  width: 50%;
+}
+
+#goBtn {
+  width: 15%;
+  padding: 0px, 5px;
+}
+
+#cards {
+  width: 80%;
+  height: 100vh;
+  margin: 10px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5%;
+}
+
+.car-card {
+  width: 40%;
+  height: 120px;
+  border: 1px solid;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background: whitesmoke;
+  transform: all 0.3s;
+}
+
+.car-card:hover {
+  background-color: grey;
+}

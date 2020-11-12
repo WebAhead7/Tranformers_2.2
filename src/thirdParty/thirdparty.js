@@ -1,7 +1,7 @@
 const requestModule = require("request");
 const https = require("https");
 const { resolve } = require("path");
-
+// Third party apis
 const optionParams = {
   Make: {
     url: "https://trans-formers.herokuapp.com/getMakes",
@@ -14,7 +14,7 @@ const optionParams = {
   },
 };
 
-function autocompleteBy(option = "Model") {
+function autocompleteBy(option = "Make") {
   switch (option) {
     case "Make":
     case "Origin":

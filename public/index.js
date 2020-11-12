@@ -22,6 +22,28 @@ function populateAutoList(prefix) {
     aultoList.appendChild(option);
   });
 }
+function createHtmlElement(htmlStr) {
+  const templete = document.createElement("template");
+  templete.innerHTML = htmlStr.trim();
+  return templete.content.firstChild;
+}
+function displayData(data) {
+  let cardsSection = document.getElementById("cards");
+  cardsSection.innerHTML = "";
+  data
+    .map((obj) => createCard(obj))
+    .forEach((card) => cardsSection.appendChild(card));
+}
+
+function createCard(obj) {
+  const { Model, Year, Cylinders, Horsepower, Make, Origin } = obj;
+  const cardDiv = createHtmlElement('<div class="car-card"></div>');
+  cardDiv.innerHTML = `<h3 class="model-title">${Model}, ${Year}</h3>
+  <h5 class="model-details">${Cylinders} Cylinders</h5>
+  <h5 class="model-details">${Horsepower} Horse Power</h5>
+  <h6 class="model-details">Made By ${Make}, ${Origin}</h6>`;
+  return cardDiv;
+}
 
 document.getElementById("searchBy").addEventListener("change", (event) => {
   event.preventDefault();
@@ -83,6 +105,7 @@ document.getElementById("Go").addEventListener("submit", (event) => {
     })
     .then((data) => {
       if (data.length !== 0) {
+        displayData(data);
         console.log(data);
       }
     })

@@ -8,37 +8,48 @@
   </head>
 
   <body>
-    <h1>Transformers_2.2</h1>
+    <div class="left"></div>
 
-    <form id="Go">
-      <select name="searchBy" id="searchBy">
-        <option selected disabled>Search by</option>
-        <option class="search-by-option" value="Make">Manufacturer</option>
-        <option class="search-by-option" value="Origin">Country</option>
-        <option class="search-by-option" value="Model">Model</option>
-      </select>
+    <div class="center">
+      <h1 class="center-title">Transformers_2.2</h1>
 
-      <input
-        type="text"
-        list="autolist"
-        name="auto"
-        id="auto"
-        placeholder="Search"
-        disabled="true"
-        ;
-      />
-      <datalist id="autolist">
-        <option value="Mazda"></option>
-        <option value="Ford"></option>
-        <option value="GMC"></option>
-        <option value="Ferrari"></option>
-      </datalist>
-      <input type="submit" id="goBtn" value="GO" disabled="true" />
-    </form>
+      <form id="Go">
+        <select name="searchBy" id="searchBy">
+          <option selected disabled>Search by</option>
+          <option class="search-by-option" value="Make">Manufacturer</option>
+          <option class="search-by-option" value="Origin">Country</option>
+          <option class="search-by-option" value="Model">Model</option>
+        </select>
 
-    <p>
-      <strong>Note:</strong> car details to be added when clicking Go button.
-    </p>
+        <input
+          type="text"
+          list="autolist"
+          name="auto"
+          id="auto"
+          placeholder="Search"
+          disabled="true"
+          ;
+        />
+        <datalist id="autolist">
+          <option value="Mazda"></option>
+          <option value="Ford"></option>
+          <option value="GMC"></option>
+          <option value="Ferrari"></option>
+        </datalist>
+        <input type="submit" id="goBtn" value="GO" disabled="true" />
+      </form>
+
+      <section id="cards">
+        <!-- <div class="car-card">
+          <h3 class="model-title">impala, 1970</h3>
+          <h5 class="model-details">8 Cylinders</h5>
+          <h5 class="model-details">8 Cylinders</h5>
+          <h6 class="model-details">Made By chevrolet, USA</h6>
+        </div> -->
+      </section>
+    </div>
+
+    <div class="right"></div>
   </body>
   <script src="public/index.js"></script>
 </html>

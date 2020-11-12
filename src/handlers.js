@@ -6,6 +6,7 @@ const autocompleteBy = require(path.join(__dirname, "thirdParty/thirdparty"));
 const serverErrorPath = "/public/serverError";
 const notFoundPath = "/public/notFound";
 const autocompleteByOptions = ["Make", "Origin", "Model"];
+
 function redirect(response, path) {
   response.writeHead(302, { location: path });
   response.end();
@@ -71,7 +72,7 @@ function resourcesHandler(request, response) {
   }
 }
 
-function atucompleteHandler(request, response) {
+function autocompleteHandler(request, response) {
   if (request.url.startsWith("/autocomplete?by=")) {
     const { by } = url.parse(request.url, true).query;
     if (by && autocompleteByOptions.includes(by)) {
@@ -113,25 +114,12 @@ function carsWithDetailsHandler(request, response) {
   }
 }
 
-function router(request, response) {
-  const { pathname, path } = url.parse(request.url);
-  if (pathname === "/") {
-    homeHandler(request, response);
-  } else if (pathname.startsWith("/public")) {
-    resourcesHandler(request, response);
-  } else if (path.startsWith("/autocomplete?")) {
-    atucompleteHandler(request, response);
-  } else if (path.startsWith("/carsWithDetails?")) {
-    //carwithDetails?by=[Make,Origin, Model]&key=[by-value]
-    carsWithDetailsHandler(request, response);
-  } else if (pathname === "/public/notFound") {
-    notFoundHandler(request, response);
-  } else if (pathname === "/public/serverError") {
-    serverErrorHandler(request, response);
-  } else {
-    console.log(pathname);
-    redirect(response, notFoundPath);
-  }
-}
-
-module.exports = router;
+module.exports = {
+  homeHandler,
+  serverErrorHandler,
+  notFoundHandler,
+  autocompleteHandler,
+  carsWithDetailsHandler,
+  resourcesHandler,
+  redirect,
+};
