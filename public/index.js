@@ -1,4 +1,4 @@
-const homeUrl = "http://localhost:3000/";
+const homeUrl = window.location.href;
 
 let autocompleteData = [];
 
