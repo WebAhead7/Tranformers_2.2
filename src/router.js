@@ -1,5 +1,7 @@
 const url = require("url");
 const path = require("path");
+const serverErrorPath = "/public/serverError";
+const notFoundPath = "/public/notFound";
 const {
   homeHandler,
   serverErrorHandler,
